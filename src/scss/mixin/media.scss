@@ -1,0 +1,35 @@
+@mixin media($width_min: $mediaXS, $width_max: $mediaMAX) {
+    @media (min-width: #{$width_min}) and (max-width: $width_max - 1) {
+        @content;
+    }
+}
+
+@mixin mediaXS() {
+    @media (min-width: $mediaXS) and (max-width: $mediaSM - 1) {
+        @content;
+    }
+}
+
+@mixin mediaSM() {
+    @media (min-width: #{$mediaSM}) and (max-width: $mediaMD - 1) {
+        @content;
+    }
+}
+
+@mixin mediaMD() {
+    @media (min-width: #{$mediaMD}) and (max-width: $mediaLG - 1) {
+        @content;
+    }
+}
+
+@mixin mediaLG() {
+    @media (min-width: #{$mediaLG}) and (max-width: $mediaLG - 1) {
+        @content;
+    }
+}
+
+@mixin mediaXL() {
+    @media (min-width: #{$mediaLG}) and (max-width: $mediaMAX) {
+        @content;
+    }
+}

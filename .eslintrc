@@ -1,0 +1,17 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "import"
+    ],
+    "extends": "airbnb-base",
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "func-names": ["error", "never"],
+        "no-var": 2,
+        "no-restricted-syntax": ["error", "never"],
+        "indent": ["error", 4],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+    }
+}

@@ -1,0 +1,84 @@
+$sizes: (
+    ('-xs', $mediaXS, $mediaSM, 5px, 10px),
+    ('-sm', $mediaSM, $mediaMD, 12px, 24px),
+    ('-md', $mediaMD, $mediaLG, 8px, 16px),
+    ('-lg', $mediaLG, $mediaXL, 12px, 24px),
+    ('-xl', $mediaXL, $mediaMAX, 15px, 30px)
+);
+
+.grid {
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        @each $size in $sizes {
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+            $columnPadding: nth($size, 4);
+
+            @include media($from, $to) {
+                margin-right: -#{$columnPadding};
+                margin-left: -#{$columnPadding};
+            }
+        }
+    }
+
+    &-col {
+        @each $size in $sizes {
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+            $columnPadding: nth($size, 4);
+            $marginBottom: nth($size, 5);
+
+            @include media($from, $to) {
+                @for $i from 1 to 13 {
+                    &--#{$i} {
+                        width: calc(100% * #{$i} / 12);
+                        margin-bottom: #{$marginBottom};
+                        padding: 0 #{$columnPadding};
+                    }
+                }
+            }
+        }
+
+        @each $size in $sizes {
+            $postfix: nth($size, 1);
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+            $columnPadding: nth($size, 4);
+            $marginBottom: nth($size, 5);
+
+            @include media($from, $to) {
+                @for $i from 1 to 13 {
+                    &#{$postfix}--#{$i} {
+                        width: calc(100% * #{$i} / 12);
+                        margin-bottom: #{$marginBottom};
+                        padding: 0 #{$columnPadding};
+                    }
+                }
+            }
+        }
+    }
+
+    &-offset {
+        @for $i from 0 to 13 {
+            &--#{$i} {
+                margin-left: calc(100% * #{$i} / 12);
+            }
+        }
+
+        @each $size in $sizes {
+            $postfix: nth($size, 1);
+            $from: nth($size, 2);
+            $to: nth($size, 3);
+
+            @include media($from, $to) {
+                @for $i from 0 to 13 {
+                    &#{$postfix}--#{$i} {
+                        margin-left: calc(100% * #{$i} / 12);
+                    }
+                }
+            }
+        }
+    }
+}
