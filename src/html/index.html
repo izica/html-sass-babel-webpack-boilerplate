@@ -3,7 +3,7 @@
     <title>Boilerplate</title>
 </head>
 <body>
-<%= require('html-loader!./_header.html') %>
+<include>_header.html</include>
 <div class="grid-row">
     <div class="grid-col--5">
         <div class="cat">
@@ -14,6 +14,6 @@
     </div>
 </div>
 <a href="products.html">products.html</a>
-<%= require('html-loader!./_footer.html') %>
+<include>_footer.html</include>
 </body>
 </html>
