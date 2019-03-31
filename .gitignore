@@ -2,4 +2,3 @@
 *.lock
 node_modules
 .idea
-dist
