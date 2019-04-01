@@ -1,22 +1,28 @@
-import { getOptions, getCurrentRequest } from 'loader-utils';
+import {getOptions, getCurrentRequest} from 'loader-utils';
 import fs from 'fs';
 import path from 'path';
 
-const loader = function (source) {
-    const options = getOptions(this);
-    const regex = new RegExp('(' + options.html.join('|') + ')', 'ig');
-    const includes = source.match(regex);
-
+const insertIncludes = function (self, content, regex) {
+    const includes = content.match(regex);
+    let newContent = content;
     if (includes) {
         includes.forEach((includeFilename) => {
             const includePath = path.resolve(`./src/html/${includeFilename}`);
-            const includeContent = fs.readFileSync(includePath, 'utf8');
-            source = source.replace(`<include>${includeFilename}</include>`, includeContent);
-            this.addDependency(includePath);
+            let includeContent = fs.readFileSync(includePath, 'utf8');
+            includeContent = insertIncludes(self, includeContent, regex);
+            newContent = newContent.replace(`<include>${includeFilename}</include>`, includeContent);
+            self.addDependency(includePath);
         });
     }
+    return newContent;
+};
 
-    return `export default ${ JSON.stringify(source) }`;
+const loader = function (source) {
+    const options = getOptions(this);
+    const regex = new RegExp(`(${options.html.join('|')})`, 'ig');
+    const newSource = insertIncludes(this, source, regex);
+
+    return `export default ${JSON.stringify(newSource)}`;
 };
 
 export default loader;
