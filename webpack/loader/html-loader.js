@@ -7,11 +7,13 @@ const insertIncludes = function (self, content, regex) {
     let newContent = content;
     if (includes) {
         includes.forEach((includeFilename) => {
-            const includePath = path.resolve(`./src/html/${includeFilename}`);
-            let includeContent = fs.readFileSync(includePath, 'utf8');
-            includeContent = insertIncludes(self, includeContent, regex);
-            newContent = newContent.replace(`<include>${includeFilename}</include>`, includeContent);
-            self.addDependency(includePath);
+            if(includeFilename.substr(0, 1) == '_'){
+                const includePath = path.resolve(`./src/html/${includeFilename}`);
+                let includeContent = fs.readFileSync(includePath, 'utf8');
+                includeContent = insertIncludes(self, includeContent, regex);
+                newContent = newContent.replace(`<include>${includeFilename}</include>`, includeContent);
+                self.addDependency(includePath);
+            }
         });
     }
     return newContent;
