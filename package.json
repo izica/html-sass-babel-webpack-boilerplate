@@ -1,5 +1,5 @@
 {
-    "name": "psd2html-boilerplate",
+    "name": "html-sass-babel-webpack-boilerplate",
     "version": "1.0.0",
     "main": "./src/server.js",
     "scripts": {
