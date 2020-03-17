@@ -10,7 +10,7 @@
         "eslint": "eslint src/**/*.js",
         "eslint-fix": "eslint src/**/*.js --fix"
     },
-    "repository": "https://gitlab.com/redlg/psd2html-boilerplate.git",
+    "repository": "https://github.com/izica/html-sass-babel-webpack-boilerplate.git",
     "author": "izica <artemiztomska@gmail.com>",
     "license": "MIT",
     "dependencies": {
