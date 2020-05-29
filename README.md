@@ -37,7 +37,7 @@
 ## Adding libraries to JS
 1. Find the desired library at https://www.npmjs.com/ (example: https://www.npmjs.com/package/moment)
 2. Install `yarn add moment` or `npm install moment`
-3. Import library into your code `import moment from 'moment'`
+3. Import library into your code `js import moment from 'moment'`
 4. Use it
 
 ## Usage
