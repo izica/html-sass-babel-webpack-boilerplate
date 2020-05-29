@@ -1,23 +1,4 @@
-# Webpack boilerplate with SASS, HTML modules, Babel
-## Usage
-Installation
-```
-npm install
-or
-yarn
-```
-Start dev server for development
-```
-npm start
-or 
-yarn start-yarn
-```
-Build
-```
-npm run build
-or
-yarn build
-```
+# Webpack boilerplate with SASS(SCSS), HTML modules, Babel
 ## Features
 * Custom html modules plugin
 ```html
@@ -46,3 +27,23 @@ yarn build
 * Eslint(airbnb-base config)
 * Eslinting on the fly(while dev)
 * Pretty console output(Friendly errors webpack plugin)
+
+## Usage
+Installation
+```
+npm install
+or
+yarn
+```
+Start dev server for development
+```
+npm start
+or 
+yarn start-yarn
+```
+Build
+```
+npm run build
+or
+yarn build
+```
