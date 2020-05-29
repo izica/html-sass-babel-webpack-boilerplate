@@ -1,6 +1,7 @@
 # Webpack boilerplate with SASS(SCSS), HTML modules, Babel
 ## Features
-* Custom html modules plugin
+* Easy to start `yarn install` + `yarn start` (`npm install` + `npm start`)
+* Custom HTML Modules plugin
 ```html
         <!DOCTYPE html>
         <html>
@@ -17,16 +18,18 @@
         </html>
 
 ```
-
-* HTML hot reload
-* HTML partials(you can include html partial)
-* SCSS
+* HTML hot reload(Livereload)
+* SCSS (SASS)
 * jQuery already installed
-* Babel(es6/7)
-* Autoprefixing and minifying with postcss
-* Eslint(airbnb-base config)
-* Eslinting on the fly(while dev)
-* Pretty console output(Friendly errors webpack plugin)
+* Babel
+  * ES6
+  * ES7
+* Autoprefixer
+* Minifier
+* PostCSS
+* Eslint (airbnb-base config)
+* Eslinting on the fly (while dev)
+* Pretty console output (Friendly errors webpack plugin)
 
 ## Usage
 Installation
