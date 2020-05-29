@@ -1,6 +1,7 @@
 # Webpack boilerplate with SASS(SCSS), HTML modules, Babel
 ## Features
 * Easy to start `yarn install` + `yarn start` (`npm install` + `npm start`)
+* Don't worry about webpack config, just code
 * Custom HTML Modules plugin
 ```html
         <!DOCTYPE html>
