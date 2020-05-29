@@ -25,6 +25,7 @@
 * Babel
   * ES6
   * ES7
+  * Class syntax + Class properties
 * Autoprefixer
 * Minifier
 * PostCSS
