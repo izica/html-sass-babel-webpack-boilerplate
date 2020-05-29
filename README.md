@@ -39,7 +39,7 @@ yarn build
 
 * HTML hot reload
 * HTML partials(you can include html partial)
-* SASS
+* SCSS
 * Babel(es6/7)
 * Autoprefixing and minifying with postcss
 * Eslint(airbnb-base config)
