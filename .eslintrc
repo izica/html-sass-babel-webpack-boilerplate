@@ -3,22 +3,26 @@
     "plugins": [
         "import"
     ],
-    "extends": "airbnb-base",
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/recommended"
+    ],
     "env": {
         "browser": true
     },
     "rules": {
-        "func-names": ["error", "never"],
-        "comma-dangle": 0,
-        "prefer-arrow-callback": 0,
-        "arrow-body-style": 0,
-        "no-lonely-if": 0,
-        "eqeqeq": 0,
-        "max-len": ["error", { "code": 140 }],
-        "object-curly-newline": 0,
-        "linebreak-style": 0,
-        "indent": ["error", 4],
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-        "no-restricted-syntax": ["error", "never"]
+        "no-restricted-syntax": ["error", "never"],
+        "no-extra-boolean-cast": 0,
+        "no-undef": 0,
+        "camelcase": ["error", {"allow": ["^UNSAFE_"]}],
+        "import/no-named-as-default": [0, "never"],
+        "import/prefer-default-export": [0, "never"],
+        "import/no-unresolved": [0, "never"],
+        "import/default": [0, "never"],
     }
 }
